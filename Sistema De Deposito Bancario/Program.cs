@@ -42,7 +42,29 @@ namespace BancCount
             Console.WriteLine("Dados da conta: ");
             Console.WriteLine(conta);
 
-            Console.WriteLine("---- Obrigado por usar o sistema bancário 1.0 ----");
+            Console.WriteLine();
+            Console.Write("Entre um valor para depósito: ");
+            double quantiaDepositada = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            //A conta recebe a quantia do depósito usando a função "Deposito"
+            //Tendo como parâmetro a (quantiaDepositada), no caso puxa o valor armazenado na "quantiaDepositada" na varíavel acima
+            conta.Deposito(quantiaDepositada);
+
+            Console.WriteLine();
+            Console.Write("Dados da conta atualizados: ");
+            Console.WriteLine(conta);
+
+            Console.WriteLine();
+            Console.Write("Entre com um valor para saque: ");
+            double quantiaSacada = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            //Função para saque
+            conta.Saque(quantiaSacada);
+            Console.WriteLine("Dados da conta atualizados: ");
+            Console.Write(conta);
+            Console.WriteLine();
+
+            Console.Write("---- Obrigado por usar o sistema bancário 1.0 ----");
         }
     }
 }
